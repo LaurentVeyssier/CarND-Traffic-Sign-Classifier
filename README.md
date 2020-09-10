@@ -63,3 +63,13 @@ Original image followed by LAB channel L, LAB channel L with CLAHE histogram nor
 
 
 ## Results
+
+The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots. We can assume the reults will be around 90 to 95% accuracy.
+
+Model with no pre-processing:
+
+![](asset/result-augmented2.png)
+
+Model with Channel L preprocessing:
+
+![](asset/result-Lchannel.png)
