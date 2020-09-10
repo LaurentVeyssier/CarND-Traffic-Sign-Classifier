@@ -9,12 +9,7 @@ The objective of the project is to classify road signs. The project came from Ud
 
 The zip archive contains 3 pickle files with training, validation and test RGB images, all 32x32 pixels. The zip file also contains a CSV file (signnames.csv) with the first column containing the class ID (an integer spanning 0-42), and the second column containing a descriptive name of the sign. Here are the first 4 rows:
 
-ClassId	SignName
-0	Speed limit (20km/h)
-1	Speed limit (30km/h)
-2	Speed limit (50km/h)
-3	Speed limit (60km/h)
-
+![](asset/classnames.png)
 
 ## Data augmentation
 
@@ -36,6 +31,10 @@ Training dataset post data augmentation:
 ## Data preprocessing
 
 The provided dataset is composed of RGB frames from short videos of road signs. Shooting conditions are inconsistent resulting into a bunch of poor quality images: over-exposed, extremely dark (night pictures), very shaky. Some images are even difficult to determine just looking at them. This might affect the training process and overall performance of the model. To compensate, several pre-processing approaches were used.
+
+![](asset/frames.png)  
+
+![](asset/poorsamples2.png)                              ![](asset/poorsamples.png)
 
 - Testing different color-spaces. While HLS and HSV do not really help on problematic images (most channels are terribly damaged by the poor shooting conditions), the LAB space offers its L-channel where underexposed/dark images can be nicely recovered. The L-channel is known to be robust to change of light intensity. I have therefore trained a model using the L-channel of the images. This approach however requires to pre-process images submitted to the model.
 
