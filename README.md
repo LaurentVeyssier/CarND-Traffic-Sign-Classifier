@@ -40,13 +40,24 @@ Shooting conditions are inconsistent resulting into a bunch of poor quality imag
 
 - Testing different color-spaces. While HLS and HSV do not really help on problematic images (most channels are terribly damaged by the poor shooting conditions), the LAB space offers its L-channel where underexposed/dark images can be nicely recovered. The L-channel is known to be robust to change of light intensity. I have therefore trained a model using the L-channel of the images. This approach however requires to pre-process images submitted to the model.
 
+Gain from using LAB color space (original image, LAB image followed by each channel L, A and B). Channel L offers good performance with poor exposures.
+
+![](asset/lab1.png)                                      ![](asset/lab2.png)
+
+
 - Normalizing the exposure using CLAHE Histogram normalization. I combined this approach when using the L-channel as it brought a small contrast improvement. Histogram normalization was performed on grayscale images and RGB images. It is even possible to merge both gray-CLAhe and RGB-clahe images into 4-channel images providing combined information to the model. This requires however heavy preprocessing and we can also let the model learn these normalization on its own.
+
+Panel of pre-processing explored with original image, grayscale, grascale post CLAHE, RGB post CLAHE normalization and combined 4-channel image.
+
+![](asset/processing.png)
 
 In the end I trained different models using two approachs:
 - no preprocessing using only the augmented dataset
 - preprocessing using L-channel and histogram normalization (clahe image processing)
 
+Original image followed by LAB channel L, LAB channel L with CLAHE histogram normalization, A and B channels. Small contrast improvement.
 
+![](asset/labCLAHE.png)
 
 
 ## Results
