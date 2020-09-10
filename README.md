@@ -7,13 +7,13 @@ The objective of the project is to classify road signs. The project came from Ud
 
 ## Loading the dataset
 
-The zip archive contains 3 pickle files with training, validation and test RGB images, all 32x32 pixels. The zip file also contains a CSV file (signnames.csv) with the first column containing the class ID (an integer spanning 0-42), and the second column containing a descriptive name of the sign. Here are the first 4 rows:
+The zip archive contains 3 pickle files with training, validation and test RGB images, all 32x32 pixels. The zip file also contains a CSV file (signnames.csv) with the first column containing the class ID (an integer spanning 0-42), and the second column containing a descriptive name of the sign. Here are the first 5 rows:
 
 ![](asset/classnames.png)
 
 ## Data augmentation
 
-The provided train dataset is highly unbalanced between classes. A few classes have large number of samples when many others have a limited amount only. This is a proven for the training phase and data augmentation is necessary to rebalance the data representation.
+The provided train dataset is highly unbalanced between classes. A few classes have large number of samples when many others have a limited amount only. This is a problem for the training phase and data augmentation is necessary to rebalance class distribution.
 
 Data augmentation is performed in several steps towards achieving a minimum number of samples in under-represented classes. This threshold is set at 1000 images or 1500 images.
 A threshold of 1000 images minimum per class results into 16,891 new images from the data augmentation steps bringing the dataset from 34,800 up to 51,700 images (+50%).
