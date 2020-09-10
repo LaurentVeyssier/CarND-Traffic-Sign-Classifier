@@ -30,9 +30,11 @@ Training dataset post data augmentation:
 
 ## Data preprocessing
 
-The provided dataset is composed of RGB frames from short videos of road signs. Shooting conditions are inconsistent resulting into a bunch of poor quality images: over-exposed, extremely dark (night pictures), very shaky. Some images are even difficult to determine just looking at them. This might affect the training process and overall performance of the model. To compensate, several pre-processing approaches were used.
+The provided dataset is composed of RGB frames from short videos of road signs.
 
 ![](asset/frames.png)  
+
+Shooting conditions are inconsistent resulting into a bunch of poor quality images: over-exposed, extremely dark (night pictures), very shaky. Some images are even difficult to determine just looking at them. This might affect the training process and overall performance of the model. To compensate, several pre-processing approaches were used.
 
 ![](asset/poorsamples2.png)                              ![](asset/poorsamples.png)
 
