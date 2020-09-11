@@ -77,7 +77,7 @@ In summary, I used three convolutional blocks (Conv2D>Relu activation>MaxPool2D)
 
 I used :
 - torch CrossEntropyLoss which combines a `LogSotfmax()` activation and `NLLLoss()` fonction
-- Adam optimizer (lr of 0.01 reduced to 0.001 and 0.0005 during fine-tuning)
+- Adam optimizer (lr of 0.001 reduced to 0.0005 during fine-tuning)
 - batch size of 256
 - dropout keep rate of 0.5
 
