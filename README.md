@@ -1,6 +1,8 @@
 # CarND-Traffic-Sign-Classifier
 Building a neural network to classify 43 different types of road sign in Pytorch.
 
+                        ![](asset/1.png) ![](asset/2.png) ![](asset/3.png) ![](asset/4.png) ![](asset/5.png)
+
 ## Description
 
 The objective of the project is to classify road signs. The project came from Udacity and was initially done in tensorflow. I have used Pytorch in this revisited version. The project uses a dataset of 34,800 images covering 43 different types of road sign. The dataset can be downloaded [here](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5898cd6f_traffic-signs-data/traffic-signs-data.zip).
