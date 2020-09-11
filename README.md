@@ -5,7 +5,13 @@ Building a neural network to classify 43 different types of road sign in Pytorch
 
 ## Description
 
-The objective of the project is to classify road signs. The project came from Udacity and was initially done in tensorflow. I have used Pytorch in this revisited version. The project uses a dataset of 34,800 images covering 43 different types of road sign. The dataset can be downloaded [here](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5898cd6f_traffic-signs-data/traffic-signs-data.zip).
+The objective of the project is to classify road signs. The project came from Udacity and was initially done in tensorflow. I have used Pytorch in this revisited version. The project uses a dataset of 34,800 images covering 43 different types of road sign. The dataset can be downloaded [here](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/5898cd6f_traffic-signs-data/traffic-signs-data.zip). More details about the dataset can be found [here](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
+
+Key steps:
+- Load and Explore, summarize and visualize the data set
+- Perform pre-processing of the data
+- Design, train and test a model architecture
+- Use the model to make predictions on test images
 
 ## Loading the dataset
 
