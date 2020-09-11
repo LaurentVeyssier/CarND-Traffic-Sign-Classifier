@@ -71,6 +71,9 @@ Original image followed by LAB channel L, LAB channel L with CLAHE histogram nor
 
 ## Model architecture
 
+The architecture is inspired from previous research. In the following descriptive [paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), Yann LeCun summarizes the philosophy of the approach: "The approach is based on Convolutional Networks (ConvNets), a biologically-inspired, multilayer feed-forward architecture that can learn multiple stages of invariant features using a combination of supervised and unsupervised learning. Each stage is composed of a (convolutional) filter bank layer, a non-linear transform layer, and a spatial feature pooling layer. The spatial pooling layers lower the spatial resolution of the representation, thereby making the representation robust to small shifts and geometric distortions, similarly to “complex cells” in standard models of the visual cortex. ConvNets are generally composed of one to three stages, capped by a classifier composed of one or two additional layers. A gradient-based supervised training procedure updates every single filter in every filter bank in every layer so as to minimizes a loss function".
+
+In summary, I used several convolutional blocks (Conv2D>Relu activation>MaxPool2D) followed by a dense network of several fully-connected blocks (LinearLayer>Relu>DropOut) delivering the classification output. The Conv2D layers are used to extract the approapriate features from the image while the maxpooling layers down-sample the x-y dimensions by a factor 2. A feature vector, summarizing the key information is fed to the Dense network generating a probabilistic distrubution over the 43 class options. During training, the model learns what to extract to maximize its prediction accuracy.
 
 ## Results
 
