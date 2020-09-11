@@ -55,7 +55,7 @@ Panel of pre-processing explored with original image, grayscale, grascale post C
 
 ![](asset/processing.png)
 
-In the end I trained different models using two approachs:
+In the end, following various trials, I trained different models using two approachs:
 - no preprocessing using only the augmented dataset
 - preprocessing using L-channel and histogram normalization (clahe image processing)
 
@@ -63,10 +63,12 @@ Original image followed by LAB channel L, LAB channel L with CLAHE histogram nor
 
 ![](asset/labCLAHE.png)
 
+## Model architecture
+
 
 ## Results
 
-The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots. We can assume the reults will be around 90 to 95% accuracy.
+The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots.
 
 Model with no pre-processing:
 
