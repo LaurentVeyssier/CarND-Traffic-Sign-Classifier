@@ -73,3 +73,8 @@ Model with no pre-processing:
 Model with Channel L preprocessing:
 
 ![](asset/result-Lchannel.png)
+
+Overall performance:
+
+![](asset/results-augmented.png)
+
