@@ -73,7 +73,7 @@ Original image followed by LAB channel L, LAB channel L with CLAHE histogram nor
 
 The architecture is inspired from previous research. In the following descriptive [paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), Yann LeCun summarizes the philosophy of the approach: "The approach is based on Convolutional Networks (ConvNets), a biologically-inspired, multilayer feed-forward architecture that can learn multiple stages of invariant features using a combination of supervised and unsupervised learning. Each stage is composed of a (convolutional) filter bank layer, a non-linear transform layer, and a spatial feature pooling layer. The spatial pooling layers lower the spatial resolution of the representation, thereby making the representation robust to small shifts and geometric distortions, similarly to “complex cells” in standard models of the visual cortex. ConvNets are generally composed of one to three stages, capped by a classifier composed of one or two additional layers. A gradient-based supervised training procedure updates every single filter in every filter bank in every layer so as to minimizes a loss function".
 
-In summary, I used three convolutional blocks (Conv2D>Relu activation>MaxPool2D) followed by a dense network of three fully-connected blocks (LinearLayer>Relu>DropOut) delivering the classification output. The Conv2D layers are used to extract the approapriate features from the image (from 3 to 8, 16, 32 feature channels) while the maxpooling layers down-sample the x-y dimensions by a factor 2 at each block (total down-sampling of 2^3=8 from 32x32 to 4x4). A feature vector, summarizing the key information is fed to the Dense network generating a probabilistic distribution over the 43 class options. During training, the model learns what to extract to maximize its prediction accuracy.
+In summary, for the augmented RGB dataset, I used three convolutional blocks (Conv2D>Relu activation>MaxPool2D) followed by a dense network of three fully-connected blocks (LinearLayer>Relu>DropOut) delivering the classification output. The Conv2D layers are used to extract the approapriate features from the image (from 3 to 8, 16, 32 feature channels) while the maxpooling layers down-sample the x-y dimensions by a factor 2 at each block (total down-sampling of 2^3=8 from 32x32 to 4x4). A feature vector, summarizing the key information is fed to the Dense network generating a probabilistic distribution over the 43 class options. During training, the model learns what to extract to maximize its prediction accuracy. L-channel images required adaptation of the input size to 1-channel. 
 
 I used :
 - torch CrossEntropyLoss which combines a `LogSotfmax()` activation and `NLLLoss()` fonction
@@ -81,13 +81,13 @@ I used :
 - batch size of 256
 - dropout keep rate of 0.5
 
-BatchNormalization of the Conv blocks deteriorates the learning process. The summary of the model architecture is shown below.
+BatchNormalization of the Conv blocks deteriorates the learning process and was discarded. The summary of the model architecture is shown below.
 
 ![](asset/architecture.png)
 
 ## Results
 
-The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots.
+The performance using either grayscale or L-channel images ended below the RGB augmented dataset. The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots.
 
 Model with no pre-processing:
 
@@ -100,3 +100,7 @@ Model with Channel L preprocessing:
 Overall performance:
 
 ![](asset/results-augmented.png)
+
+Performance using sample internet pictures:
+
+![](asset/pictures.png)
