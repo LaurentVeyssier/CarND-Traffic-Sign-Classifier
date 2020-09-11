@@ -1,7 +1,7 @@
 # CarND-Traffic-Sign-Classifier
 Building a neural network to classify 43 different types of road sign in Pytorch.
 
-                        ![](asset/1.png) ![](asset/2.png) ![](asset/3.png) ![](asset/4.png) ![](asset/5.png)
+![](asset/1.png) ![](asset/2.png) ![](asset/3.png) ![](asset/4.png) ![](asset/5.png)
 
 ## Description
 
