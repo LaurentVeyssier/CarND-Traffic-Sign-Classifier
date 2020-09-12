@@ -26,7 +26,7 @@ The provided train dataset is highly unbalanced between classes. A few classes h
 ![](asset/labelDistribution.png)
 
 Data augmentation is performed in several steps towards achieving a minimum number of samples in under-represented classes. This threshold is set at 1000 images or 1500 images.
-A threshold of 1000 images minimum per class results into 16,891 new images from the data augmentation steps bringing the dataset from 34,800 up to 51,700 images (+50%).
+A threshold of 1000 images minimum per class results into 16,891 new images from the data augmentation steps bringing the dataset from 34,800 up to 51,700 images (+50%). I achived the highest results with the dataset build upon the 1500 threshold. With this threshold, 32,580 additonal images were generated, bringing the augmented training dataset to a total of 67,380 images, twice as much as the initial size.
 
 Data augmentation is performed using : 
 - symetry invariance : several road sign types are invariant to horizontal flip ('No entry'), or vertical flip ('No vehicules', 'No entry') or rotation ('roundabout mandatory').
@@ -87,7 +87,7 @@ BatchNormalization of the Conv blocks deteriorates the learning process and was 
 
 ## Results
 
-The performance using either grayscale or L-channel images ended below the RGB augmented dataset. The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots.
+The performance using either grayscale or L-channel images ended below the RGB augmented dataset. The following results were achieved after 20 epochs. The model is able to predict road signs correctly even with poor shoots. The saved model weigthts can be found in the folder `models` of this repository.
 
 Model with no pre-processing:
 
