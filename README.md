@@ -36,7 +36,7 @@ Data augmentation is performed using :
 The resulting dataset is much more balanced which will faciliate the training process.
 
 Training dataset post data augmentation:
-![](asset/augmentedset.png)
+![](asset/post-augmentation.png)
 
 ## Data preprocessing
 
